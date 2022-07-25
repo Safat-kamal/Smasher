@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://kit.fontawesome.com/5601a811bf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Smasher - Blogs</title>
+</head>
+
+<body class="bg-gray-200">
+    <!-- header -->
+    <header class="text-gray-600 body-font shadow-md">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2"
+                    class="w-10 h-10 text-white p-2 bg-[orangered] rounded-full" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="ml-3 text-xl"></span>
+            </a>
+            <nav
+                class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 space-x-5 flex flex-wrap items-center text-base justify-center">
+                <a href="index.html" class="font-medium text-[navy] hover:text-[orangered]">HOME</a>
+                <a href="about.html" class="font-medium text-[navy] hover:text-[orangered]">ABOUT</a>
+                <div x-data="{ dropdownOpen: false } " @click.outside="dropdownOpen = false"
+                    class="relative inline-block">
+                    <button @click="dropdownOpen = !dropdownOpen"
+                        class="flex items-center py-3 px-5 rounded bg-primary text-[navy] font-semibold text-base hover:text-[orangered] -mx-5">SOLUTIONS<span
+                            class="pl-2">
+                            <svg width="12" height="7" viewBox="0 0 12 7" class="fill-current">
+                                <path
+                                    d="M0.564864 0.879232C0.564864 0.808624 0.600168 0.720364 0.653125 0.667408C0.776689 0.543843 0.970861 0.543844 1.09443 0.649756L5.82517 5.09807C5.91343 5.18633 6.07229 5.18633 6.17821 5.09807L10.9089 0.649756C11.0325 0.526192 11.2267 0.543844 11.3502 0.667408C11.4738 0.790972 11.4562 0.985145 11.3326 1.10871L6.60185 5.55702C6.26647 5.85711 5.73691 5.85711 5.41917 5.55702L0.670776 1.10871C0.600168 1.0381 0.564864 0.967492 0.564864 0.879232Z">
+                                </path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M1.4719 0.229332L6.00169 4.48868L10.5171 0.24288C10.9015 -0.133119 11.4504 -0.0312785 11.7497 0.267983C12.1344 0.652758 12.0332 1.2069 11.732 1.50812L11.7197 1.52041L6.97862 5.9781C6.43509 6.46442 5.57339 6.47872 5.03222 5.96853C5.03192 5.96825 5.03252 5.96881 5.03222 5.96853L0.271144 1.50833C0.123314 1.3605 -5.04223e-08 1.15353 -3.84322e-08 0.879226C-2.88721e-08 0.660517 0.0936127 0.428074 0.253705 0.267982C0.593641 -0.0719548 1.12269 -0.0699964 1.46204 0.220873L1.4719 0.229332ZM5.41917 5.55702C5.73691 5.85711 6.26647 5.85711 6.60185 5.55702L11.3326 1.10871C11.4562 0.985145 11.4738 0.790972 11.3502 0.667408C11.2267 0.543844 11.0325 0.526192 10.9089 0.649756L6.17821 5.09807C6.07229 5.18633 5.91343 5.18633 5.82517 5.09807L1.09443 0.649756C0.970861 0.543844 0.776689 0.543843 0.653125 0.667408C0.600168 0.720364 0.564864 0.808624 0.564864 0.879232C0.564864 0.967492 0.600168 1.0381 0.670776 1.10871L5.41917 5.55702Z">
+                                </path>
+                            </svg></span>
+                    </button>
+                    <div :class="dropdownOpen ? 'top-full opacity-100 visible' : 'top-[110%] invisible opacity-0' "
+                        class="absolute z-40 min-w-[250px] left-0 rounded border-[.5px] border-light bg-[navy] text-white shadow-card py-5 mt-2 transition-all top-full opacity-100 visible">
+                        <a href="service.html"
+                            class="font-semibold text-base text-body-color block py-2 px-5 hover:hover:text-[orangered]">For
+                            All</a>
+                        <a href="web.html"
+                            class="font-semibold text-base text-body-color block py-2 px-5 hover:hover:text-[orangered]">For
+                            Web Development</a>
+                        <a href="mobile.html"
+                            class="font-semibold text-base text-body-color block py-2 px-5 hover:hover:hover:text-[orangered]">For
+                            Mobile Development</a>
+                        <a href="devops.html"
+                            class="font-semibold text-base text-body-color block py-2 px-5 hover:hover:hover:text-[orangered]">For
+                            DevOps Managements</a>
+                        <a href="server.html"
+                            class="font-semibold text-base text-body-color block py-2 px-5 hover:hover:text-[orangered]">For
+                            Servers Managements</a>
+                    </div>
+                </div>
+                <a href="contacts.html" class="font-medium text-[navy] hover:text-[orangered]">CONTACT</a>
+                <a href="signin.html" class="font-medium text-[navy] hover:text-[orangered]">LOGIN</a>
+            </nav>
+        </div>
+    </header>
+    <br>
+    <!-- body -->
+    <section class="container mx-auto sm:w-full px-4 md:w-3/4">
+        <img class="object-cover sm:w-full md:w-3/4 h-96 mx-auto" src="img/blog_cover.webp" alt="Article">
+        <div class="mx-auto">
+            <div>
+                <span class="text-sm font-medium text-blue-900 uppercase">Product</span>
+                <a href="#" class="block mt-2 text-3xl font-semibold transition-colors duration-200 transform text-[orangered] underline">I Built A Successful Blog In One Year</a>
+                <p class="mt-4 text-md text-black text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero similique laudantium eaque iusto voluptatem in inventore! Eum qui pariatur sit debitis vel earum, quam repellat nulla facilis. Odio ut ducimus commodi ipsum debitis natus non magni. Repellat eum perferendis expedita dolore repellendus saepe voluptatem dolorem eos possimus consectetur reiciendis recusandae assumenda esse atque provident vel sequi iste illo non odio numquam dolores, nam quos. Distinctio hic possimus blanditiis deleniti doloremque voluptate illo tempora repellendus quos! Reiciendis earum ut nostrum eos laboriosam tempore possimus ad veritatis doloribus. Quam, doloribus ad? Cupiditate porro ut velit nihil impedit molestias numquam sapiente minus blanditiis beatae ducimus dolor aliquam doloribus consequatur excepturi veniam labore culpa, et temporibus magnam! Accusantium accusamus, ex sunt culpa nulla placeat illo totam itaque, distinctio tempore sequi iusto doloremque optio debitis laborum aut corrupti. Dignissimos distinctio iste et aliquid amet earum totam, repellendus itaque quam non cum aut natus, pariatur nihil quis exercitationem deserunt molestiae doloribus. Consequatur minima quae, sit delectus impedit aliquam quidem natus dolor amet quibusdam quam, illo autem expedita similique hic quaerat cum vitae aliquid laborum voluptas exercitationem numquam eaque fugiat? Laudantium exercitationem culpa maxime neque porro reiciendis, laborum fuga autem tempore voluptatem numquam deleniti labore ipsum illo tenetur. Reprehenderit sapiente dolore ea enim magnam. Provident necessitatibus sequi a, dicta debitis voluptas blanditiis ducimus eligendi ipsa inventore. Fuga explicabo inventore impedit deleniti tempora, eum a perferendis dignissimos iure eveniet illum cumque excepturi, voluptas quos totam! Temporibus sapiente harum saepe veritatis aspernatur, atque possimus nobis consequatur eius delectus a debitis officia, adipisci veniam dolor tempora maxime. Nesciunt quibusdam consequatur ut officiis aut voluptates nobis veritatis perspiciatis ducimus, dolores provident harum nulla pariatur? Voluptatibus impedit modi consequuntur doloribus optio ex maiores amet corrupti facere! Repellat hic ipsa vel distinctio laudantium quisquam, similique eius facilis voluptatibus alias placeat totam nobis quam quos est ipsam delectus assumenda! Quos suscipit repellendus pariatur corrupti, error vitae minima beatae quidem natus! Dolore dicta, assumenda recusandae incidunt corrupti tenetur quam veniam consectetur repellendus hic! Architecto, minima quaerat. Quia porro quo vel quidem amet tempore dolore optio temporibus asperiores. Tempore cupiditate cumque voluptates beatae maxime minus soluta. Reprehenderit dicta, consequuntur tenetur necessitatibus quos recusandae est repellat voluptate accusantium blanditiis quibusdam quo qui mollitia magnam veniam accusamus iste error illo possimus asperiores officiis ea! Ullam nesciunt corporis, aliquam doloremque, beatae quidem et sequi officia fuga laboriosam suscipit repellendus iste! In debitis voluptatem explicabo nobis libero laborum, a quibusdam voluptatibus? Illo sit rerum eos quisquam eveniet nam fugiat explicabo, praesentium quaerat fuga ducimus nesciunt neque! Quis repellat hic vitae libero doloremque beatae a assumenda fuga quas? Laboriosam aut non ea nam, veniam cumque voluptate molestias nulla. Eos doloremque quod iusto quis eum aliquid hic enim quae aperiam perferendis quibusdam facere ipsa ea, sunt omnis unde et voluptate, a magnam officia. Voluptatem alias numquam inventore nostrum repellat! Cum consectetur saepe, recusandae reprehenderit amet neque at iste quas placeat laborum a! Adipisci dolorum facere provident quia ipsa nam asperiores consectetur. Qui eligendi non aut, natus aperiam culpa velit corrupti veritatis nesciunt dolores nam officiis numquam totam, mollitia quos in minus ad impedit, neque possimus error. Est impedit eaque itaque fugiat odio doloremque aperiam aut corrupti voluptatem culpa? Odio accusamus quia amet distinctio reiciendis deserunt labore. Saepe, sunt culpa, a quasi possimus atque in qui optio quas accusantium ea facere ad enim vel dolores accusamus quibusdam, error voluptatum. Nulla recusandae ad exercitationem minima quidem ipsa, officiis, perspiciatis, impedit suscipit sapiente itaque natus aliquam voluptatem numquam repudiandae quaerat quos eum alias nobis at neque consectetur laboriosam. Dignissimos doloribus at soluta illo laboriosam libero, sed in rerum autem, debitis cupiditate repudiandae rem adipisci dolorem tempore atque neque consequatur. Nostrum officiis eligendi ab! Veritatis quia optio voluptas minima libero tempore nobis eius nesciunt aliquid sed, cumque voluptatem molestias officia, corporis ipsam? Similique consequuntur maiores eum consequatur atque possimus laborum voluptas molestias eligendi debitis ex reprehenderit impedit minima ipsa, nobis quis quos. Quidem qui, quis non porro libero, nisi odio nesciunt placeat aperiam quisquam quia hic laboriosam, culpa voluptatem obcaecati doloribus recusandae alias quod cumque reprehenderit unde debitis ad! Aliquid dolorum, delectus ducimus culpa beatae maiores necessitatibus ipsum. Officia aliquam odio placeat quaerat commodi eos qui odit cupiditate. Rem deserunt quis eveniet voluptatibus. Quod impedit sunt nobis molestias perferendis enim, ratione repellendus unde! Magni, odio perspiciatis! Amet nam ex rerum laboriosam velit eius, aliquam odio harum. Excepturi, ipsa corporis. Laborum sed, quia iure illum nihil saepe minus deserunt magnam praesentium. Fugit, laudantium soluta doloribus nisi commodi quasi voluptatibus animi atque voluptatum, architecto nemo nihil facere beatae. Inventore maiores labore reprehenderit eligendi non molestias cum iure consequatur eveniet sit odio eos dolore, repellendus quam ipsam nihil beatae magni! Nobis, accusantium ullam. Ipsam nostrum tempore accusamus doloribus magnam recusandae minus quae possimus provident dolor eum dolorem officiis eius similique eaque deleniti, repellat perferendis quos, expedita debitis sit quidem obcaecati esse tempora. Earum animi dolores voluptates consectetur esse velit quaerat temporibus perferendis blanditiis assumenda magni, dicta hic provident in nihil fugiat officiis ea, voluptatibus ad, labore molestiae. Illum quidem earum temporibus asperiores nemo non voluptatibus sapiente accusamus ut sequi totam facilis labore minima dolorem suscipit possimus quisquam magni, architecto nam nisi quia, consectetur ipsam? Autem iste, dolor, facilis qui enim ipsa maxime veniam esse nobis sequi ab vel culpa? Fuga voluptatem doloremque totam voluptates odio quod suscipit placeat quaerat cumque vero. Tenetur ea dolorum, architecto non earum itaque. Doloribus iusto iure ab est hic incidunt! Mollitia incidunt sed iusto quod. Veritatis atque ratione autem magnam est corporis voluptas temporibus, in similique eligendi exercitationem nam optio tempore. Aliquid, consectetur facere? Esse facilis dicta perspiciatis corrupti velit aliquam quasi iste. Reiciendis doloremque, ipsum est qui itaque cupiditate alias enim eveniet, ullam accusantium eligendi, minima deleniti omnis dolor natus odio placeat aliquam numquam distinctio corporis molestias magni quos assumenda adipisci? Ut eius voluptas temporibus labore deleniti animi voluptatum explicabo quaerat incidunt amet repudiandae est repellendus, distinctio earum maxime nesciunt, mollitia ea cum quibusdam. Veniam nam neque sequi, ipsam perspiciatis, amet totam vero harum recusandae iste voluptatum quasi. Laudantium excepturi minus dolorem. Eveniet id, eius ratione quae temporibus cumque dolorem deserunt placeat consequatur excepturi incidunt non nulla dicta saepe, consequuntur delectus veritatis laborum nostrum quisquam a provident! Id ratione sint aliquid voluptatem obcaecati deleniti vero quod, neque tempora distinctio necessitatibus suscipit eum et omnis ea eius rem labore, temporibus quos accusantium excepturi corporis modi quia. Reiciendis commodi voluptatem veniam labore perferendis nulla nostrum in dolores, necessitatibus, quidem suscipit quasi quia omnis officia nemo modi aut accusantium ex iusto, qui placeat? Reprehenderit neque consequuntur fugit quod eaque quas molestiae ad doloribus nesciunt odit architecto explicabo magnam qui, dicta laborum quia quasi soluta veritatis necessitatibus corrupti porro suscipit. Voluptatibus magnam placeat vitae excepturi quia dolore quo qui nostrum quaerat optio itaque, ipsam voluptate, laborum eum repudiandae doloribus enim dolorem, dignissimos provident dicta iste harum numquam. Dolore unde distinctio quia doloribus quaerat illo eaque expedita vitae harum. Ut repudiandae quae voluptate eligendi numquam! Ullam nihil perspiciatis, temporibus quam cum ea quas praesentium natus, aperiam nam numquam ducimus debitis sint exercitationem quis! Velit, accusamus quasi? Aliquam ipsa qui reprehenderit laudantium perspiciatis illum accusantium. Labore, sunt aspernatur obcaecati autem, dicta maiores illum in optio dolores repellendus voluptatum! Iure eum tempora sit aliquid eveniet esse non iusto maiores reprehenderit temporibus perferendis ut eligendi laudantium laboriosam aliquam aut enim eius ea tenetur totam, quam facere dolores voluptas! Nam incidunt cumque vero similique earum ullam molestias iste dolorem consequuntur enim voluptatum id perspiciatis quod deserunt quas dolore non nemo, consequatur laborum alias ratione. Qui nam rem perferendis delectus quae et tempore veritatis, sit doloremque eos, nisi laborum reprehenderit velit laudantium dolorem nobis ab maxime ut explicabo dicta ipsum blanditiis! Quae possimus beatae, rerum necessitatibus unde dolores, distinctio dignissimos aliquam quas quasi hic. Accusantium error sequi officia necessitatibus quidem dignissimos minus neque atque sunt, suscipit, consequatur earum rerum nesciunt a maiores labore non illo quia recusandae? Saepe at ab laudantium sed sunt aliquid nulla animi, neque eum repellendus eius, quidem, esse in dolores aspernatur exercitationem. Temporibus, quod neque soluta, rerum nemo eaque quae adipisci molestias voluptatibus distinctio nulla consequuntur doloremque quam dolorem numquam obcaecati corporis unde commodi tempore? Nesciunt consectetur enim exercitationem error nulla amet rerum debitis? Debitis quod voluptas maiores ut iste tenetur assumenda, aut enim saepe ipsam architecto cupiditate facilis quibusdam consequatur nemo obcaecati ratione reiciendis possimus, ea autem aperiam? Laboriosam sed similique eveniet blanditiis numquam assumenda officia expedita, vel enim nobis ducimus dolorem temporibus libero eos repellendus, possimus velit eligendi, id odio. Quasi facere error praesentium, beatae porro velit itaque odio expedita natus earum hic. Quas saepe at, dignissimos neque dolore consequatur excepturi. Repellat quibusdam quisquam aliquid adipisci ratione harum commodi consequatur? Labore ipsam enim, incidunt, corporis sed beatae a aperiam tempora eum aspernatur ullam cumque ex nisi voluptate, laborum impedit. Reiciendis possimus natus asperiores accusantium in culpa? Temporibus commodi, sit a, tempore consectetur quasi ducimus, consequuntur delectus ratione molestias rerum consequatur odit totam aspernatur perspiciatis sint corporis quis impedit quam odio? Voluptatem quisquam debitis totam consequuntur pariatur vitae porro nisi esse! Alias id debitis perferendis sint eos exercitationem aperiam atque, culpa sunt eligendi aspernatur mollitia omnis, ducimus suscipit accusantium quibusdam quam corrupti inventore quae consequuntur consequatur sit voluptas! Ab ducimus quas totam tempora, dolores, tenetur ea sapiente itaque dolorem excepturi, cum vel soluta consequuntur quibusdam minus ad odit aut harum impedit unde expedita atque! Eius, excepturi ab debitis molestias, harum porro architecto ea sit veniam illo adipisci illum assumenda deserunt recusandae corrupti placeat quas dolor dignissimos quasi. Beatae natus, officiis labore sit eius pariatur distinctio nulla. Molestias sapiente odio nihil voluptatem ipsum doloremque provident perspiciatis necessitatibus veritatis soluta, architecto, tempore expedita? Inventore enim qui necessitatibus aperiam, quasi expedita quae eligendi excepturi quam quas hic iusto suscipit debitis vitae eaque recusandae veniam. Voluptatibus ut ipsam quae illum adipisci hic nihil suscipit consectetur iure blanditiis veniam quis nesciunt voluptas doloribus, natus omnis officia tempora incidunt ducimus aut iusto molestias, quas consequuntur. Voluptate facilis deleniti, recusandae debitis quisquam obcaecati inventore sunt optio voluptatem qui dolorum explicabo mollitia nesciunt fugit nostrum, perferendis, id possimus nobis. Voluptatibus quia, doloribus voluptatem dolorum veniam incidunt inventore, quas perferendis repudiandae, necessitatibus nostrum fuga deserunt asperiores et placeat ea explicabo enim nemo? Impedit numquam culpa esse voluptate ad corporis rem qui, nemo voluptates assumenda magni. Facere esse non incidunt iure quia, molestiae quibusdam officia aliquid suscipit sapiente eum odit delectus, doloribus rerum quasi ab amet vitae atque sed soluta expedita. Ullam voluptatem itaque tenetur labore asperiores in doloremque, nulla nesciunt est optio architecto facere culpa delectus consequatur vero quo eos et ex? Repudiandae, molestiae! Ratione amet recusandae quas porro similique quasi ipsam officiis voluptatum molestias sunt. Modi ut doloremque aut sint laudantium explicabo atque, veniam magnam quidem, sunt officia dolores nostrum rerum velit animi non odio accusantium. Eveniet illum laborum, amet suscipit blanditiis modi sunt iure? Dignissimos dolor amet, earum provident inventore eligendi consectetur quia officiis similique voluptates voluptas dolore debitis quisquam architecto repellendus dolores, eius alias odit. Laudantium officia sunt magni sit perferendis repudiandae omnis odit adipisci, modi quos suscipit sequi nam nemo temporibus sint doloremque. Eveniet, reiciendis ipsam accusamus illum tempora doloremque facere perspiciatis labore consequatur natus autem laboriosam nobis molestias quis dolorem. Modi quas amet iusto cum deleniti facilis corrupti esse fugit! Aliquam deleniti pariatur vitae rem eaque ducimus blanditiis labore laboriosam, sequi, possimus cupiditate nisi repellat voluptas perferendis porro modi quis impedit totam. Velit architecto quis ratione eveniet quaerat, nihil repellat laborum deserunt incidunt ducimus. Dolorem, omnis minima iusto exercitationem perspiciatis quae. Magnam suscipit maxime fuga commodi similique quidem adipisci beatae sint, voluptas natus. Velit magni ex, qui labore sed voluptate consequuntur fugit est beatae, enim doloribus tempore repellendus culpa esse quas corporis tenetur quo porro voluptatibus earum quisquam laudantium facere nemo! Enim accusantium laboriosam quam aliquid fuga tempore dignissimos cumque modi rerum, nemo et laudantium est odit, repellendus velit tenetur sunt saepe. Sapiente quam illum aspernatur ipsa doloremque facere libero voluptates esse exercitationem. Temporibus perferendis et nulla distinctio eum commodi error sunt fuga iusto quo praesentium architecto modi cupiditate impedit, at tenetur, libero quod maiores blanditiis, fugit necessitatibus! Ducimus debitis modi aspernatur?</p>
+            </div>
+            <div class="mt-4">
+                <div class="flex items-center">
+                    <div class="flex items-center">
+                        <img class="object-cover h-10 rounded-full" src="img/blog_user.webp" alt="Avatar">
+                        <a href="#" class="mx-2 font-semibold text-black">Jone Doe</a>
+                    </div>
+                    <span class="mx-1 text-xs text-black">21 SEP 2015</span>
+                </div>
+            </div>
+            <div class="mt-3">
+                <div class="flex">
+                    <h6 class="text-md font-bold">Share: <a href="https://facebook.com"><i class="fa-brands fa-facebook-f text-[navy] text-md ml-3 font-bold"></i> </a><a href="https://twitter.com"><i class="fa-brands fa-twitter text-sky-500 text-md ml-3 font-bold"></i> </a><a href="https://linkedin.com"><i class="fa-brands fa-linkedin-in text-blue-800 text-md ml-3 font-bold"></i></a> <a href="https://in.pinterest.com/"><i class="fa-brands fa-pinterest-p text-red-600 text-md ml-3 font-bold"></i></a></h6>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container mx-auto sm:w-full px-4 md:w-3/4 pb-16 pt-9">
+        <form action="" method="post">
+            <div class="relative mb-4">
+                <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+                <input type="text" id="name" name="name" required placeholder="Name...."
+                    class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out shadow-md">
+            </div>
+            <div class="relative mb-4">
+                <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Email Address...."
+                    class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out shadow-md">
+            </div>
+            <div class="relative mb-4">
+                <label for="message" class="leading-7 text-sm text-gray-600">Comment</label>
+                <textarea id="message" name="message" required placeholder="Write Your Comment...."
+                    class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out shadow-md"></textarea>
+            </div>
+            <div class="relative mb-4">
+                <button type="submit"
+                    class="text-white bg-[navy] shadow-lg border-0 py-2 px-6 focus:outline-none hover:bg-[orangered] rounded text-lg w-full">COMMENT</button>
+            </div>
+        </form>
+    </section>
+    <!-- footer -->
+    <footer class="bg-[navy] text-white body-font shadow-lg">
+        <div class="bg-[orangered]">
+            <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+                <p class="text-white text-sm text-center sm:text-left">© 2022 All Rights Reserved
+                    <a href="https://twitter.com/" rel="noopener noreferrer" class="text-white ml-1"
+                        target="_blank">Smasher—</a>
+                </p>
+                <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                    <a class="text-white hover:text-[navy] cursor-pointer">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-white hover:text-[navy] cursor-pointer">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5" viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-white hover:text-[navy] cursor-pointer">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-white hover:text-[navy] cursor-pointer">
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path stroke="none"
+                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                            </path>
+                            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                        </svg>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

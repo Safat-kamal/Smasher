@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://kit.fontawesome.com/5601a811bf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Smasher - Services</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="text-gray-600 body-font shadow-md">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2"
+                    class="w-10 h-10 text-white p-2 bg-[orangered] rounded-full" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="ml-3 text-xl"></span>
+            </a>
+            <nav
+                class="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400 space-x-5 flex flex-wrap items-center text-base justify-center">
+                <a href="index.html" class="font-medium text-[navy] hover:text-[orangered]">HOME</a>
+                <a href="about.html" class="font-medium text-[navy] hover:text-[orangered]">ABOUT</a>
+                <div x-data="{ dropdownOpen: false } " @click.outside="dropdownOpen = false"
+                    class="relative inline-block">
+                    <button @click="dropdownOpen = !dropdownOpen"
+                        class="flex items-center py-3 px-5 rounded bg-primary text-[navy] font-semibold text-base hover:text-[orangered] -mx-5">SOLUTIONS<span
+                            class="pl-2">
+                            <svg width="12" height="7" viewBox="0 0 12 7" class="fill-current">
+                                <path
+                                    d="M0.564864 0.879232C0.564864 0.808624 0.600168 0.720364 0.653125 0.667408C0.776689 0.543843 0.970861 0.543844 1.09443 0.649756L5.82517 5.09807C5.91343 5.18633 6.07229 5.18633 6.17821 5.09807L10.9089 0.649756C11.0325 0.526192 11.2267 0.543844 11.3502 0.667408C11.4738 0.790972 11.4562 0.985145 11.3326 1.10871L6.60185 5.55702C6.26647 5.85711 5.73691 5.85711 5.41917 5.55702L0.670776 1.10871C0.600168 1.0381 0.564864 0.967492 0.564864 0.879232Z">
+                                </path>
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M1.4719 0.229332L6.00169 4.48868L10.5171 0.24288C10.9015 -0.133119 11.4504 -0.0312785 11.7497 0.267983C12.1344 0.652758 12.0332 1.2069 11.732 1.50812L11.7197 1.52041L6.97862 5.9781C6.43509 6.46442 5.57339 6.47872 5.03222 5.96853C5.03192 5.96825 5.03252 5.96881 5.03222 5.96853L0.271144 1.50833C0.123314 1.3605 -5.04223e-08 1.15353 -3.84322e-08 0.879226C-2.88721e-08 0.660517 0.0936127 0.428074 0.253705 0.267982C0.593641 -0.0719548 1.12269 -0.0699964 1.46204 0.220873L1.4719 0.229332ZM5.41917 5.55702C5.73691 5.85711 6.26647 5.85711 6.60185 5.55702L11.3326 1.10871C11.4562 0.985145 11.4738 0.790972 11.3502 0.667408C11.2267 0.543844 11.0325 0.526192 10.9089 0.649756L6.17821 5.09807C6.07229 5.18633 5.91343 5.18633 5.82517 5.09807L1.09443 0.649756C0.970861 0.543844 0.776689 0.543843 0.653125 0.667408C0.600168 0.720364 0.564864 0.808624 0.564864 0.879232C0.564864 0.967492 0.600168 1.0381 0.670776 1.10871L5.41917 5.55702Z">
+                                </path>
+                            </svg></span>
+                    </button>
+                    <div :class="dropdownOpen ? 'top-full opacity-100 visible' : 'top-[110%] invisible opacity-0' "
+                        class="absolute z-40 min-w-[250px] left-0 rounded border-[.5px] border-light bg-[navy] text-white shadow-card py-5 mt-2 transition-all top-full opacity-100 visible">
+                        <a href="service.html"
+                            class="font-semibold text-base text-body-color block py-2 px-5 hover:hover:text-[orangered]">All</a>
+                        <a href="web.html"
+                            class="font-semibold text-base text-body-color block py-2 px-5 hover:hover:text-[orangered]">Web Development</a>
+                        <a href="mobile.html"
+                            class="font-semibold text-base text-body-color block py-2 px-5 hover:hover:hover:text-[orangered]">Mobile Development</a>
+                        <a href="devops.html"
+                            class="font-semibold text-base text-body-color block py-2 px-5 hover:hover:hover:text-[orangered]">DevOps Managements</a>
+                        <a href="server.html"
+                            class="font-semibold text-base text-body-color block py-2 px-5 hover:hover:text-[orangered]">Servers Managements</a>
+                    </div>
+                </div>
+                <a href="contacts.html" class="font-medium text-[navy] hover:text-[orangered]">CONTACT</a>
+                <a href="signin.html" class="font-medium text-[navy] hover:text-[orangered]">LOGIN</a>
+            </nav>
+        </div>
+    </header>
+    <br>
+    <!-- body -->
+    <section class="pt-9 px-14">
+        <div class="container">
+            <div class="flex flex-wrap -mx-4">
+                <div class="w-full px-4">
+                    <div class="flex flex-col text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
+                        <span class="font-semibold text-lg text-gray-600 mb-2 block"> Our Services</span>
+                        <h2 class="font-bold text-3xl sm:text-4xl md:text-[40px] text-dark mb-6"> What We Offer</h2>
+                        <span class="h-1 w-28 bg-green-600 mx-auto"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-wrap -mx-4">
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+                    <a href="web.html">                    
+                        <div class="p-10 md:px-7 xl:px-10 rounded-[20px] bg-[navy] shadow-lg shadow-gray-700 hover:shadow-lg hover:shadow-gray-700 hover:bg-[#0101a0] mb-8 cursor-pointer ">
+                            <div class="w-[70px] h-[70px] flex items-center justify-center bg-[orangered] rounded-2xl mb-8">
+                                <i class="fa-solid fa-laptop-code text-3xl text-white"></i>
+                            </div>
+                            <h4 class="font-semibold text-xl text-white mb-3"> WEB DEVELOPMENT</h4>
+                            <p class="text-white"> We are Creating New Applications for Web Platforms and also maintaining existing onces. </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+                    <a href="mobile.html">                    
+                        <div class="p-10 md:px-7 xl:px-10 rounded-[20px] bg-[navy] shadow-lg shadow-gray-700 hover:shadow-lg hover:shadow-gray-700 hover:bg-[#0101a0] mb-8 cursor-pointer ">
+                            <div class="w-[70px] h-[70px] flex items-center justify-center bg-[orangered] rounded-2xl mb-8">
+                                <i class="fa-solid fa-mobile-screen-button text-3xl text-white"></i>
+                            </div>
+                            <h4 class="font-semibold text-xl text-white mb-3"> MOBILE DEVELOPMENT</h4>
+                            <p class="text-white"> We are Creating New Applications for Android & Ios Platforms and also maintaining existing Mobile Apps </p>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+                    <a href="devops.html">                    
+                        <div class="p-10 md:px-7 xl:px-10 rounded-[20px] bg-[navy] shadow-lg shadow-gray-700 hover:shadow-lg hover:shadow-gray-700 hover:bg-[#0101a0] mb-8 cursor-pointer ">
+                            <div class="w-[70px] h-[70px] flex items-center justify-center bg-[orangered] rounded-2xl mb-8">
+                                <i class="fa-solid fa-infinity text-3xl text-white"></i>
+                            </div>
+                            <h4 class="font-semibold text-xl text-white mb-3"> DEVOPS MANAGEMENTS</h4>
+                            <p class="text-white"> cultural philosophies, practices, and tools that increases an organization's ability to deliver applications and services.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+                    <a href="server.html">                    
+                        <div class="p-10 md:px-7 xl:px-10 rounded-[20px] bg-[navy] shadow-lg shadow-gray-700 hover:shadow-lg hover:shadow-gray-700 hover:bg-[#0101a0] mb-8 cursor-pointer ">
+                            <div class="w-[70px] h-[70px] flex items-center justify-center bg-[orangered] rounded-2xl mb-8">
+                                <i class="fa-solid fa-server text-3xl text-white"></i>
+                            </div>
+                            <h4 class="font-semibold text-xl text-white mb-3"> SERVERS MANAGEMENTS</h4>
+                            <p class="text-white"> We Are Developing Application using Backend Programming Languages i.e. PHP, PYTHON, JAVA, RUBY.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+                    <a href="server.html">                    
+                        <div class="p-10 md:px-7 xl:px-10 rounded-[20px] bg-[navy] shadow-lg shadow-gray-700 hover:shadow-lg hover:shadow-gray-700 hover:bg-[#0101a0] mb-8 cursor-pointer ">
+                            <div class="w-[70px] h-[70px] flex items-center justify-center bg-[orangered] rounded-2xl mb-8">
+                                <i class="fa-solid fa-database text-3xl text-white"></i>
+                            </div>
+                            <h4 class="font-semibold text-xl text-white mb-3"> DATABASES HANDLING</h4>
+                            <p class="text-white"> We Are Handle  Application Databases for mainting their data i.e. MYSQL, MONGODB, ORACLE, MS SERVER.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="w-full md:w-1/2 lg:w-1/3 px-4">
+                    <a href="blog.html">                    
+                        <div class="p-10 md:px-7 xl:px-10 rounded-[20px] bg-[navy] shadow-lg shadow-gray-700 hover:shadow-lg hover:shadow-gray-700 hover:bg-[#0101a0] mb-8 cursor-pointer ">
+                            <div class="w-[70px] h-[70px] flex items-center justify-center bg-[orangered] rounded-2xl mb-8">
+                                <i class="fa-brands fa-blogger text-3xl text-white"></i>
+                            </div>
+                            <h4 class="font-semibold text-xl text-white mb-3"> BLOGS</h4>
+                            <p class="text-white"> We Have Our Blog Section ,Where You can Read More About Your Solution on different Topics</p>
+                        </div>
+                    </a>
+                </div>  
+            </div>
+        </div>
+    </section>
+    <!-- footer -->
+    <footer class="bg-[navy] text-white body-font shadow-lg">
+        <div class="bg-[orangered]">
+            <div class="container mx-auto py-4 px-5 flex flex-wrap flex-col sm:flex-row">
+                <p class="text-white text-sm text-center sm:text-left">© 2022 All Rights Reserved
+                    <a href="https://twitter.com/" rel="noopener noreferrer" class="text-white ml-1"
+                        target="_blank">Smasher—</a>
+                </p>
+                <span class="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
+                    <a class="text-white hover:text-[navy] cursor-pointer">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5" viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-white hover:text-[navy] cursor-pointer">
+                        <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="w-5 h-5" viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                            </path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-white hover:text-[navy] cursor-pointer">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                        </svg>
+                    </a>
+                    <a class="ml-3 text-white hover:text-[navy] cursor-pointer">
+                        <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                            <path stroke="none"
+                                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                            </path>
+                            <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                        </svg>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
